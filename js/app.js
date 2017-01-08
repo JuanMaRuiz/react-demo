@@ -19,10 +19,16 @@ var jsDevs = [
 class Dev extends React.Component {
   render () {
     return (
-      <li>
-        <img src={this.props.image} />
-        {this.props.nanme} - {this.props.twitter}
-      </li>
+      <div class="media">
+        <div class="media-left">
+          <a href={this.props.twitter}>
+            <img class="media-object" src={this.props.image} alt="{this.props.name}" width="64px" height="64px"/>
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{this.props.name} </h4>
+        </div>
+      </div>
     )
   }
 }
