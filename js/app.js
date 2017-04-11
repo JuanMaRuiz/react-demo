@@ -1,21 +1,3 @@
-var jsDevs = [
-  {
-    name: "Addy Osmani",
-    twitter: "https://twitter.com/addyosmani",
-    image: "http://2016.render-conf.com/perch/resources/addy.jpeg"
-  },
-  {
-    name: "Matt Gaunt",
-    twitter: "https://twitter.com/gauntface",
-    image: "https://pbs.twimg.com/profile_images/733873586381803520/UmK-lmzN_400x400.jpg"
-  },
-  {
-    name: "Paul Irish",
-    twitter: "https://twitter.com/paul_irish",
-    image: "https://pbs.twimg.com/profile_images/420826194083213312/CP1RmLa3_400x400.jpeg"
-  }
-]
-
 class Dev extends React.Component {
   render () {
     return (
@@ -91,7 +73,8 @@ class App extends React.Component {
     event.preventDefault();
     let dev = {
       name: event.target.name.value,
-      twitter: event.target.twitter.value
+      twitter: event.target.twitter.value,
+      image: '../assets/img/default.png'
     }
 
     this.setState({
