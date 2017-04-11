@@ -19,16 +19,18 @@ var jsDevs = [
 class Dev extends React.Component {
   render () {
     return (
-      <div class="media">
-        <div class="media-left">
+      <li className="list-group-item">
+      <div className="media">
+        <div className="media-left">
           <a href={this.props.twitter}>
-            <img class="media-object" src={this.props.image} alt="{this.props.name}" width="64px" height="64px"/>
+            <img className="media-object" src={this.props.image} alt="{this.props.name}" width="64px" height="64px"/>
           </a>
         </div>
-        <div class="media-body">
-          <h4 class="media-heading">{this.props.name} </h4>
+        <div className="media-body">
+          <h4 className="media-heading">{this.props.name} </h4>
         </div>
       </div>
+      </li>
     )
   }
 }
@@ -37,17 +39,24 @@ class DevList extends React.Component {
   render () {
     return (
       <div>
-        <ul>
+        <div class="page-header">
+          <h1>React example</h1>
+        </div>
+        <ul className="col-sm-12 col-md-8 list-group">
           {
             this.props.jsDevs.map(dev => {
               return (<Dev name={dev.name} twitter={dev.twitter} image={dev.image} />);
             })
           }
         </ul>
-        <form onSubmit={this.props.onAddDev}>
-          <input type="text" placeholder="Name" name="name" />
-          <input type="text" placeholder="Twitter" name="twitter" />
-          <button type="submit">Add dev</button>
+        <form className="col-sm-12 col-md-4" onSubmit={this.props.onAddDev}>
+          <div className="form-group">
+            <input className="form-control" type="text" placeholder="Name" name="name" />
+          </div>
+          <div className="form-group">
+            <input className="form-control" type="text" placeholder="Twitter" name="twitter" />
+          </div>
+          <button className="btn btn-primary" type="submit">Add developer</button>
         </form>
       </div>
     )
